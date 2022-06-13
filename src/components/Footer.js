@@ -2,6 +2,7 @@ import {useState} from 'react';
 import '../styles/Footer.css';
 
 function Footer() {
+    //Créer un state Footer, et déclarer une fonction pour manipuler la valeur
     const [inputValue, setInputValue] = useState('')
 
     function handleBlur() {
