@@ -1,5 +1,5 @@
 import '../styles/Cart.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function Cart({cart, updateCart}) {
     //Créer un state Cart, et déclarer une fonction pour mettre à jour ce state, et lui attribuer une valeur initiale de 0
@@ -14,6 +14,10 @@ function Cart({cart, updateCart}) {
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	);
+
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`
+	}, [total])
 
 	return isOpen ? (
 		<div className='lmj-cart'>
